@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "mcp__git__git_diff_staged",
       "mcp__git__git_diff_unstaged",
       "mcp__git__git_log",
       "mcp__git__git_status",
