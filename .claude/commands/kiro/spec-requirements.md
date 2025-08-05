@@ -10,14 +10,14 @@ Generate comprehensive requirements for feature: **$ARGUMENTS**
 ## Context Validation
 
 ### Steering Context
-- Architecture context: @.kiro/steering/structure.md
-- Technical constraints: @.kiro/steering/tech.md
-- Product context: @.kiro/steering/product.md
+- Architecture context: @.claude/steering/structure.md
+- Technical constraints: @.claude/steering/tech.md
+- Product context: @.claude/steering/product.md
 
 ### Existing Spec Context
-- Current spec directory: !`ls -la .kiro/specs/$ARGUMENTS/`
-- Current requirements: @.kiro/specs/$ARGUMENTS/requirements.md
-- Spec metadata: @.kiro/specs/$ARGUMENTS/spec.json
+- Current spec directory: !`ls -la .claude/specs/$ARGUMENTS/`
+- Current requirements: @.claude/specs/$ARGUMENTS/requirements.md
+- Spec metadata: @.claude/specs/$ARGUMENTS/spec.json
 
 ## Task: Generate Initial Requirements
 
@@ -70,7 +70,7 @@ Don't focus on code exploration in this phase. Instead, just focus on writing re
 - **Acceptance Criteria**: Testable conditions using EARS format
 
 ### 3. Requirements Document Structure
-Generate requirements.md in the language specified in spec.json (check `@.kiro/specs/$ARGUMENTS/spec.json` for "language" field):
+Generate requirements.md in the language specified in spec.json (check `@.claude/specs/$ARGUMENTS/spec.json` for "language" field):
 
 ```markdown
 # Requirements Document
@@ -126,11 +126,11 @@ Generate the requirements document content ONLY. Do not include any review or ap
 The following is for Claude Code conversation only - NOT for the generated document:
 
 ### Next Phase Uses Interactive Approval
-After generating requirements.md, the next phase (`/kiro:spec-design $ARGUMENTS`) will use interactive approval:
+After generating requirements.md, the next phase (`/claude:spec-design $ARGUMENTS`) will use interactive approval:
 
 **Next interaction will be**:
 ```
-/kiro:spec-design feature-name
+/claude:spec-design feature-name
 # → "requirements.mdをレビューしましたか？ [y/N]"
 # → If 'y': Auto-approval + design generation
 # → If 'N': Stop and request review first
@@ -149,7 +149,7 @@ After generating requirements.md, the next phase (`/kiro:spec-design $ARGUMENTS`
 - [ ] Requirements align with project goals
 
 ### Traditional Manual Approval Still Available
-If needed, you can still manually approve by updating `.kiro/specs/$ARGUMENTS/spec.json`:
+If needed, you can still manually approve by updating `.claude/specs/$ARGUMENTS/spec.json`:
 ```json
 {
   "approvals": {
@@ -162,7 +162,7 @@ If needed, you can still manually approve by updating `.kiro/specs/$ARGUMENTS/sp
 }
 ```
 
-**Recommended**: Use the interactive approval in `/kiro:spec-design $ARGUMENTS` for better user experience.
+**Recommended**: Use the interactive approval in `/claude:spec-design $ARGUMENTS` for better user experience.
 
 ## Instructions
 

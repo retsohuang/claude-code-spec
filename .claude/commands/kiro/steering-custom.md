@@ -1,17 +1,17 @@
 ---
-description: Create custom Kiro steering documents for specialized project contexts
+description: Create custom Claude steering documents for specialized project contexts
 allowed-tools: Bash, Read, Write, Edit, MultiEdit, Glob, Grep, LS
 ---
 
-# Kiro Custom Steering Creation
+# Claude Custom Steering Creation
 
-Create custom steering documents in `.kiro/steering/` for specialized contexts beyond the three foundational files (product.md, tech.md, structure.md).
+Create custom steering documents in `.claude/steering/` for specialized contexts beyond the three foundational files (product.md, tech.md, structure.md).
 
 ## Current Steering Status
 
 ### Existing Steering Documents
-- Core steering files: !`ls -la .kiro/steering/*.md 2>/dev/null || echo "No steering directory found"`
-- Custom steering count: !`if [ -d ".kiro/steering" ]; then count=0; for f in .kiro/steering/*.md; do if [ -f "$f" ] && [ "$f" != ".kiro/steering/product.md" ] && [ "$f" != ".kiro/steering/tech.md" ] && [ "$f" != ".kiro/steering/structure.md" ]; then count=$((count + 1)); fi; done; echo "$count"; else echo "0"; fi`
+- Core steering files: !`ls -la .claude/steering/*.md 2>/dev/null || echo "No steering directory found"`
+- Custom steering count: !`if [ -d ".claude/steering" ]; then count=0; for f in .claude/steering/*.md; do if [ -f "$f" ] && [ "$f" != ".claude/steering/product.md" ] && [ "$f" != ".claude/steering/tech.md" ] && [ "$f" != ".claude/steering/structure.md" ]; then count=$((count + 1)); fi; done; echo "$count"; else echo "0"; fi`
 
 ### Project Analysis
 - Specialized areas: !`find . -path ./node_modules -prune -o -path ./.git -prune -o -type d \( -name "test*" -o -name "spec*" -o -name "api" -o -name "auth" -o -name "security" \) -print 2>/dev/null || echo "No specialized directories found"`
@@ -135,7 +135,7 @@ Create the custom steering document with:
    - Inclusion mode preference
    - Specific patterns for conditional inclusion (if applicable)
 
-2. **Create the document** in `.kiro/steering/` with:
+2. **Create the document** in `.claude/steering/` with:
    - Clear, focused content (2-3 minute read)
    - Practical examples
    - Consistent formatting with other steering files

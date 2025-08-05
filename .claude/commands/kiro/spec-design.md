@@ -12,8 +12,8 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 **CRITICAL**: Design can only be generated after requirements are reviewed and approved.
 
 ### Requirements Review Process
-- Requirements document: @.kiro/specs/$ARGUMENTS/requirements.md
-- Spec metadata: @.kiro/specs/$ARGUMENTS/spec.json
+- Requirements document: @.claude/specs/$ARGUMENTS/requirements.md
+- Spec metadata: @.claude/specs/$ARGUMENTS/spec.json
 
 **Interactive Approval Process**:
 1. **Check if requirements exist** - Verify that requirements.md has been generated
@@ -37,7 +37,7 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 **User Interaction Example**:
 ```
 📋 Requirements review required before generating design.
-📄 Please review: .kiro/specs/feature-name/requirements.md
+📄 Please review: .claude/specs/feature-name/requirements.md
 ❓ requirements.mdをレビューしましたか？ [y/N]: y
 ✅ Requirements approved automatically. Proceeding with design generation...
 ```
@@ -47,7 +47,7 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 ### Requirements Foundation
 **CRITICAL**: Design must be built upon approved requirements document.
 
-- **Requirements document**: @.kiro/specs/$ARGUMENTS/requirements.md
+- **Requirements document**: @.claude/specs/$ARGUMENTS/requirements.md
 - **EARS format requirements**: Each requirement with acceptance criteria
 - **User stories mapping**: Design components must address specific user stories
 - **Constraints and acceptance criteria**: Must be reflected in technical decisions
@@ -55,13 +55,13 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 **Verification Required**: Ensure requirements.md exists and is approved before proceeding.
 
 ### Steering Context
-- Current architecture: @.kiro/steering/structure.md
-- Technology stack: @.kiro/steering/tech.md
-- Product constraints: @.kiro/steering/product.md
+- Current architecture: @.claude/steering/structure.md
+- Technology stack: @.claude/steering/tech.md
+- Product constraints: @.claude/steering/product.md
 
 ### Current Spec Context
-- Current design: @.kiro/specs/$ARGUMENTS/design.md
-- Spec metadata: @.kiro/specs/$ARGUMENTS/spec.json
+- Current design: @.claude/specs/$ARGUMENTS/design.md
+- Spec metadata: @.claude/specs/$ARGUMENTS/spec.json
 
 ## Task: Create Technical Design
 
@@ -94,7 +94,7 @@ Create comprehensive technical design for feature: **$ARGUMENTS**
 Generate comprehensive design document in the language specified in spec.json, incorporating research findings:
 
 ### 1. Design Document Structure
-Create design.md in the language specified in spec.json (check `@.kiro/specs/$ARGUMENTS/spec.json` for "language" field):
+Create design.md in the language specified in spec.json (check `@.claude/specs/$ARGUMENTS/spec.json` for "language" field):
 
 ```markdown
 # Technical Design
@@ -358,15 +358,15 @@ This command now implements interactive approval:
 1. **Requirements Review Prompt**: Automatically prompts user to confirm requirements review
 2. **Auto-approval**: Updates spec.json automatically when user confirms with 'y'
 3. **Design Generation**: Proceeds immediately after approval
-4. **Next Phase**: Design is generated and ready for interactive approval by `/kiro:spec-tasks`
+4. **Next Phase**: Design is generated and ready for interactive approval by `/claude:spec-tasks`
 
 ### Design Review for Next Phase
-After generating design.md, the next phase (`/kiro:spec-tasks $ARGUMENTS`) will use similar interactive approval:
+After generating design.md, the next phase (`/claude:spec-tasks $ARGUMENTS`) will use similar interactive approval:
 
 **Preview of next interaction**:
 ```
 📋 Design review required before generating tasks.
-📄 Please review: .kiro/specs/feature-name/design.md
+📄 Please review: .claude/specs/feature-name/design.md
 ❓ design.mdをレビューしましたか？ [y/N]: 
 ```
 

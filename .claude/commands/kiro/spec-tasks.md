@@ -12,9 +12,9 @@ Generate detailed implementation tasks for feature: **$ARGUMENTS**
 **CRITICAL**: Tasks can only be generated after both requirements and design are reviewed and approved.
 
 ### Interactive Review Process
-- Requirements document: @.kiro/specs/$ARGUMENTS/requirements.md
-- Design document: @.kiro/specs/$ARGUMENTS/design.md
-- Spec metadata: @.kiro/specs/$ARGUMENTS/spec.json
+- Requirements document: @.claude/specs/$ARGUMENTS/requirements.md
+- Design document: @.claude/specs/$ARGUMENTS/design.md
+- Spec metadata: @.claude/specs/$ARGUMENTS/spec.json
 
 **Interactive Approval Process**:
 1. **Check if documents exist** - Verify that requirements.md and design.md have been generated
@@ -43,9 +43,9 @@ Generate detailed implementation tasks for feature: **$ARGUMENTS**
 **User Interaction Example**:
 ```
 📋 Requirements and Design review required before generating tasks.
-📄 Please review: .kiro/specs/feature-name/requirements.md
+📄 Please review: .claude/specs/feature-name/requirements.md
 ❓ requirements.mdをレビューしましたか？ [y/N]: y
-📄 Please review: .kiro/specs/feature-name/design.md
+📄 Please review: .claude/specs/feature-name/design.md
 ❓ design.mdをレビューしましたか？ [y/N]: y
 ✅ Requirements and Design approved automatically. Proceeding with tasks generation...
 ```
@@ -53,15 +53,15 @@ Generate detailed implementation tasks for feature: **$ARGUMENTS**
 ## Context Analysis
 
 ### Complete Spec Context (APPROVED)
-- Requirements: @.kiro/specs/$ARGUMENTS/requirements.md
-- Design: @.kiro/specs/$ARGUMENTS/design.md
-- Current tasks: @.kiro/specs/$ARGUMENTS/tasks.md
-- Spec metadata: @.kiro/specs/$ARGUMENTS/spec.json
+- Requirements: @.claude/specs/$ARGUMENTS/requirements.md
+- Design: @.claude/specs/$ARGUMENTS/design.md
+- Current tasks: @.claude/specs/$ARGUMENTS/tasks.md
+- Spec metadata: @.claude/specs/$ARGUMENTS/spec.json
 
 ### Steering Context
-- Architecture patterns: @.kiro/steering/structure.md
-- Development practices: @.kiro/steering/tech.md
-- Product constraints: @.kiro/steering/product.md
+- Architecture patterns: @.claude/steering/structure.md
+- Development practices: @.claude/steering/tech.md
+- Product constraints: @.claude/steering/product.md
 
 ## Task: Generate Code-Generation Prompts
 
@@ -72,7 +72,7 @@ Generate detailed implementation tasks for feature: **$ARGUMENTS**
 Create implementation plan in the language specified in spec.json:
 
 ### 1. Code-Generation Tasks Structure
-Create tasks.md in the language specified in spec.json (check `@.kiro/specs/$ARGUMENTS/spec.json` for "language" field):
+Create tasks.md in the language specified in spec.json (check `@.claude/specs/$ARGUMENTS/spec.json` for "language" field):
 
 ```markdown
 # Implementation Plan
@@ -269,7 +269,7 @@ After generating tasks.md, the implementation phase is ready to begin.
 **Final approval process for implementation**:
 ```
 📋 Tasks review completed. Ready for implementation.
-📄 Generated: .kiro/specs/feature-name/tasks.md
+📄 Generated: .claude/specs/feature-name/tasks.md
 ✅ All phases approved. Implementation can now begin.
 ```
 
